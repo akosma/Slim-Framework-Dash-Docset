@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 
-DEPLOY_PATH="$HOME/Library/Application Support/Dash/DocSets/Slim Framework"
 FILE_NAME="Slim Framework.docset"
+URL="http://docs.slimframework.com"
+WEBARCHIVE="index.webarchive"
+DEPLOY_PATH="$HOME/Library/Application Support/Dash/DocSets/Slim Framework"
 
 # Clean the previous run of this script
 echo "Cleaning"
@@ -10,11 +12,11 @@ mkdir -p "$FILE_NAME/Contents/Resources/Documents/"
 
 # Download the latest version of the Slim Framework documentation
 echo "Downloading"
-./webarchiver -url http://docs.slimframework.com -output index.webarchive
+./webarchiver -url $URL -output $WEBARCHIVE
 
 # Put everything in place
 echo "Setting up bundle"
-cp index.webarchive "$FILE_NAME/Contents/Resources/Documents/"
+cp $WEBARCHIVE "$FILE_NAME/Contents/Resources/Documents/"
 cp Info.plist "$FILE_NAME/Contents"
 cp icon.png "$FILE_NAME"
 python ./sqlite.py
