@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-DEPLOY_PATH="~/Library/Application Support/Dash/DocSets/Slim Framework"
+DEPLOY_PATH="$HOME/Library/Application Support/Dash/DocSets/Slim Framework"
 FILE_NAME="Slim Framework.docset"
 
 # Clean the previous run of this script
